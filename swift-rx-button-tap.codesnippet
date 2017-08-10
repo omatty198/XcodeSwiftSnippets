@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>rx_button_tap</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeExpression</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>&lt;#Button#&gt;
+  .rx.tap
+  .throttle(&lt;#DUETIME_RxTimeInterval#&gt;, latest: false, scheduler: MainScheduler.instance)
+  .subscribe(onNext: { [weak self] _ in
+    guard let wself = self else { return }
+    
+  })
+  .disposed(by: bag)</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>11ABCB77-0143-4D03-B7D3-51B24C725D54</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>RxButtonTapWithMultipleTapsProhibition</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>RxButtonTapWithMultipleTapsProhibition</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
