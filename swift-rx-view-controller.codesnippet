@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>viewcontroller</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>import UIKit
+import RxSwift
+import RxCocoa
+
+final class &lt;#ViewController#&gt;: UIViewController {
+
+var viewModel: &lt;#ViewModel#&gt;!
+    
+    private let disposeBag = DisposeBag()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+    }
+
+    func bindViewModel() {
+        let input = &lt;#ViewModel#&gt;.Input(
+            
+        )
+        
+        let output = viewModel.build(input: input)
+        
+    }
+}
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>7A4088DC-0699-463B-9DE3-340AC5F07680</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Generic</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>RxViewController</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>0</integer>
+</dict>
+</plist>

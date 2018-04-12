@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>viewmodel</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>import RxSwift
+import RxCocoa
+
+final class &lt;#ViewModel#&gt;: InjectableViewModel {
+    
+    typealias Dependency = (
+        
+    )
+    
+    init(dependency: Dependency) {
+        
+    }
+    
+    struct Input {
+        
+    }
+    
+    struct Output {
+        
+    }
+    
+    func build(input: Input) -&gt; Output {
+        
+        return Output(
+            
+        )
+    }
+}
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>CD501425-541A-4369-9588-79CCE05E7D19</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>RxViewModel</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>0</integer>
+</dict>
+</plist>
