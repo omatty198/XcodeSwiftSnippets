@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>vc</string>
+    <key>IDECodeSnippetCompletionScopes</key>
+    <array>
+        <string>CodeExpression</string>
+    </array>
+	<key>IDECodeSnippetContents</key>
+	<string>import UIKit
+import Swinject
+
+final class <#Some#>ViewControllerAssembly: Assembly {
+    
+    func assemble(container: Container) {
+        
+        container.register(<#Some#>ViewController.self) { resolver in
+            let viewController = UIStoryboard.instantiateViewController(of: <#Some#>ViewController.self)
+            viewController.viewModel = resolver.resolve(<#Some#>ViewModel.self)!
+            return viewController
+        }
+        
+        container.register(<#Some#>ViewModel..self) { resolver in
+            return <#Some#>ViewModel.(dependency: (
+                resolver.resolve(<#SomeProtocol#>.self)!,
+				resolver.resolve(<#SomeProtocol#>.self)!
+            ))
+        }
+    }
+}
+
+extension <#Some#>ViewController {
+    static func make() -> <#Some#>ViewController {
+        return Container.shared.resolve(<#Some#>ViewController.self)!
+    }
+}
+
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>CD501425-541A-4369-9588-79CCE05E7D19</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+    <key>IDECodeSnippetSummary</key>
+    <string>vc</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>RxViewModel</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>0</integer>
+</dict>
+</plist>

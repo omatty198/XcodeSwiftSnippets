@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>viewcontroller</string>
+	<string>vc</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
@@ -24,7 +24,7 @@ var viewModel: &lt;#ViewModel#&gt;!
         bindViewModel()
     }
 
-    func bindViewModel() {
+    private func bindViewModel() {
         let input = &lt;#ViewModel#&gt;.Input(
             
         )
