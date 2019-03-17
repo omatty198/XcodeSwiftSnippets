@@ -6,6 +6,10 @@
 
 $ `git clone https://github.com/omatty198/XcodeSwiftSnippets.git && cp ./*.codesnippet ~/Library/Developer/Xcode/UserData/CodeSnippets`
 
+if `~/Library/Developer/Xcode/UserData/CodeSnippets` is not directory, plz 
+
+$ `mkdir ~/Library/Developer/Xcode/UserData/CodeSnippets`
+
 ## Ref
 
 - [Xcode Snippets](http://nshipster.com/xcode-snippets/)
