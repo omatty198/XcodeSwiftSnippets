@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>cell</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>final class &lt;#CustomCell#&gt;: UICollectionViewCell, InputAppliable {
+    @IBOutlet private weak var &lt;#titleImageView#&gt;: UIImageView!
+    @IBOutlet private weak var &lt;#titleLabel#&gt;: UILabel!
+    @IBOutlet private weak var &lt;#titleButton#&gt;: UIButton!
+    
+    typealias Input = &lt;#Void#&gt;
+    
+    func apply(input: &lt;#Void#&gt;) {
+        
+    }
+}
+
+extension &lt;#CustomCell#&gt;: BindableCell {
+    static func makeBinder(value: Input) -&gt; CellBinder {
+        return CellBinder(cellType: &lt;#CustomCell#&gt;.self, configureCell: { $0.apply(input: value) })
+    }
+}
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>3471D972-78CF-43E9-93EB-17B92CE161A9</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>make binder cell</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>InputAppliable Cell</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>0</integer>
+</dict>
+</plist>
