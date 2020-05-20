@@ -20,7 +20,7 @@ final class &lt;#ViewModel#&gt;: ObservableObject {
     @Published var isExecuting = false
     @Published var errorMessage = ""
     @Published var hasError: Bool = false
-    @Published var isSuccess: Bool = false
+    @Published var isSuccess: Bool = false // NOTE: 成功した後に、画面遷移がすべき場合に必要
     
     private var progress: AnyPublisher&lt;Progress&lt;MockUser&gt;, Never&gt;!
     private var cancellables = Set&lt;AnyCancellable&gt;()
@@ -42,7 +42,7 @@ final class &lt;#ViewModel#&gt;: ObservableObject {
             .store(in: &amp;cancellables)
         
         progress.value
-            .print("[verificationID]")
+            .print("[MockUser]")
             .sink(receiveValue: { (mockUser) in
                 self.isSuccess = true
                 self.point = mockUser.point
@@ -60,7 +60,7 @@ final class &lt;#ViewModel#&gt;: ObservableObject {
     }
     
     func getMe() {
-        let response = userRepository.getMockPoint()
+        let response = userRepository.getMockMe()
         progress = Progress.makeProgress(from: response)
     }
 }
@@ -76,6 +76,6 @@ final class &lt;#ViewModel#&gt;: ObservableObject {
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
-	<integer>0</integer>
+	<integer>2</integer>
 </dict>
 </plist>
