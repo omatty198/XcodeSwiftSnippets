@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>viewmodel</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>import Combine
+
+final class &lt;#ViewModel#&gt;: ObservableObject {
+    let getMeSubject = PassthroughSubject&lt;Void, Never&gt;()
+    
+    // Output
+    @Published var point = ""
+    
+    @Published var isExecuting = false
+    @Published var errorMessage = ""
+    @Published var hasError: Bool = false
+    @Published var isSuccess: Bool = false
+    
+    private var progress: AnyPublisher&lt;Progress&lt;MockUser&gt;, Never&gt;!
+    private var cancellables = Set&lt;AnyCancellable&gt;()
+    
+    init() {
+        getMeSubject
+            .sink { _ in
+                self.getMe()
+                self.sinkMe()
+            }
+            .store(in: &amp;cancellables)
+    }
+    
+    func sinkMe() {
+        progress.executing
+            .print("[isExecuting]")
+            .receive(on: DispatchQueue.main)
+            .assign(to: \.isExecuting, on: self)
+            .store(in: &amp;cancellables)
+        
+        progress.value
+            .print("[verificationID]")
+            .sink(receiveValue: { (mockUser) in
+                self.isSuccess = true
+                self.point = mockUser.point
+            })
+            .store(in: &amp;cancellables)
+        
+        progress.error
+            .print("[Error]")
+            .receive(on: DispatchQueue.main)
+            .sink(receiveValue: { (error) in
+                self.errorMessage = error.localizedDescription
+                self.hasError = true
+            })
+            .store(in: &amp;cancellables)
+    }
+    
+    func getMe() {
+        let response = userRepository.getMockPoint()
+        progress = Progress.makeProgress(from: response)
+    }
+}
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>8D803534-28CD-402A-B371-3C2DD3BD0F46</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Combine ViewModel</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>0</integer>
+</dict>
+</plist>
